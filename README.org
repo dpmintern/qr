@@ -14,9 +14,10 @@
   If that is not the case, it will just error for incompatibility.
 
 ** Writing
-*** TODO DPM1
+*** TODO [#C] DPM1
 - Some sort of time-based encryption is applied to the QR.
-*** TODO DPM2
+**** TODO Reference [[https://github.com/envyniv/denpa-qr-code-editor][The Previous QR Editor]]
+*** TODO [#A] DPM2
 #+caption: - red's the header
 #+caption: - blue's a separator used for unknown purposes,
 #+caption: - green is some sort of data,
@@ -38,4 +39,4 @@ same goes for 70-77
 **** JAPAN
 japanese DPM2 qrs start with ~952d 41c1 a1dd 7f2c~
 
-*** TODO DPM3
+*** TODO [#B] DPM3

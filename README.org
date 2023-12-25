@@ -1,0 +1,41 @@
+#+title: The Great Denpa Men QR Investigation
+#+author: envyniv
+
+** Reading
+
+*** DONE DPM1
+- Will *only* read v6 lM
+*** DONE DPM2-3
+- The games pulls garbage data when a field is missing or invalid
+- They do not care what format the QR is in as long as the data is valid.
+- Despite the QRs having different headers by region, they can be cross-read.
+  If a denpa exists in your house, and you scan a QR from a different region
+  but with same parameters, the game will acknowledge that.
+  If that is not the case, it will just error for incompatibility.
+
+** Writing
+*** TODO DPM1
+- Some sort of time-based encryption is applied to the QR.
+*** TODO DPM2
+#+caption: - red's the header
+#+caption: - blue's a separator used for unknown purposes,
+#+caption: - green is some sort of data,
+#+caption: - orange i believe to be the head, which is a really weird feature to highlight but it's the first that jumped at me
+#+name: figured: eur/clinton.bin, usa/clinton.bin jpn/clinton-iku.bin
+[[./org-assets/image.png]]
+- Encoding is much more linear and deterministic.
+- QRs are formatted almost readably
+**** WEST
+DPM2 EU and NA qrs have the same header but different offsets
+the first eight bytes are ~8C78 C533 CB2C 8DE6~
+bytes 10 to 2f have the same values in all regions:
+~302A 039B C089 3DC6 302A 039B C089 3DC6~
+~302A 039B C089 3DC6 302A 039B C089 3DC6~
+same goes for 70-77
+40-6f are some data
+***** US
+39-3f have a value of ~0b5c 5565 5a58 43af~
+**** JAPAN
+japanese DPM2 qrs start with ~952d 41c1 a1dd 7f2c~
+
+*** TODO DPM3
